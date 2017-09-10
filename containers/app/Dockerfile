@@ -1,5 +1,8 @@
 FROM ubuntu:14.04
 
+ENV http_proxy 'http://netproxy1.infra.sgdc:8080'
+ENV https_proxy 'http://netproxy1.infra.sgdc:8080'
+
 # uncomment 2 lines for latest node.js
 RUN apt-get update; apt-get install -y apt-transport-https; echo deb https://deb.nodesource.com/node_4.x trusty main >> /etc/apt/sources.list
 RUN apt-get update; apt-get install -y --force-yes nodejs git ssh-client python make g++ libkrb5-dev

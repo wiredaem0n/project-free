@@ -1,4 +1,8 @@
 FROM ubuntu
+
+ENV http_proxy 'http://netproxy1.infra.sgdc:8080'
+ENV https_proxy 'http://netproxy1.infra.sgdc:8080'
+
 RUN echo 'deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx' > /etc/apt/sources.list.d/nginx.list; apt-get update;
 RUN apt-get install -y --force-yes psmisc inotify-tools dnsmasq git wget cron nginx=1.9.15-1~trusty
 

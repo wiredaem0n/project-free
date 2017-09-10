@@ -1,5 +1,8 @@
 FROM ubuntu
 
+ENV http_proxy 'http://netproxy1.infra.sgdc:8080'
+ENV https_proxy 'http://netproxy1.infra.sgdc:8080'
+
 # install stable node.js from repo
 RUN apt-get update; apt-get install -y --force-yes nodejs nodejs-legacy npm git ssh-client libkrb5-dev dos2unix
 RUN npm install -g bower gulp
