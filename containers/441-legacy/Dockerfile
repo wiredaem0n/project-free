@@ -1,5 +1,8 @@
 FROM ubuntu
 
+ENV http_proxy 'http://netproxy1.infra.sgdc:8080'
+ENV https_proxy 'http://netproxy1.infra.sgdc:8080'
+
 RUN apt-get update
 RUN apt-get install apache2 libapache2-mod-php php-xml php7.0-mbstring php7.0-sqlite php7.0-curl nodejs-legacy npm sqlite3 curl git
 RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
